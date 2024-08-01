@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="/css/arfac.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main-top">
+            <h2>ดูไอดีป่ะ</h2>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et ipsam saepe amet, quaerat iste aliquam perferendis ab vitae delectus quas temporibus, cupiditate numquam suscipit explicabo necessitatibus eligendi quasi laborum.</h2>
+        </div>
+        <form action="/Artifact/add" method="post">
+        <% if(messages.error){%>
+            <div class="fg" style="display: none;">
+                <p><h3><%= message.error %></h3></p>
+            </div>
+        <%}%>
+            <div class="fg"> 
+                <label for="uid">UID</label>
+                <input type="text" name="uid"placeholder="UID" required>
+            </div>
+            <div class="fg">
+                <label for="name" >Name</label>
+                <input type="text" name="name"placeholder="Name" autocomplete="off" required>
+            </div>
+            <div class="fg">
+                <label for="info">INFO</label>
+                <textarea name="charec" required></textarea>
+            </div>
+            <div class="conf"> 
+                <a class="b" href="/">Back</a>
+                <button class="s" type="submit" >SUBMIT</button>
+            </div>
+        </form>
+    </main>
+</body>

@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <aside id="sidebar">
+        <a href="/Artifact">ADD</a>
+    </aside>
+    <header id="header">
+        <h1>Wellcome to Build Dashbord</h1>
+    </header>
+    <main id="main">
+        <div class="user-c c-i"></div>
+        <div class="user-i c-i">
+            <div class="title">
+                <p>UID</p>
+                <p>Name</p>
+                <p>Charector</p>
+                <p>TIME</p>
+                <p>More</p>
+            </div>
+            <table>
+                <tbody>
+                    <% if(status){%>
+                        <%for(let i=0; i < (Object.keys(user).length) ; i++){%>
+                            <tr>
+                                <td>
+                                    <%= user[i].uid %>
+                                </td>
+                                <td>
+                                    <%= user[i].name %>
+                                </td>
+                                <td>
+                                    <%= user[i].charector %>
+                                </td>
+                                <td>
+                                    <%= time %>
+                                </td>
+                                <td>
+                                    <button onclick="toggleUI('<%=user[i].uid%>','<%=user[i].name%>','<%=user[i].charector%>')">More</button>
+                                </td>
+                            </tr>
+                            <%}%>
+                                <%}%>
+                </tbody>
+            </table>
+            <% if(!status){%>
+                <h1 style="text-align: center;
+                    margin: .3em 0 0 0;">NOT FOUND</h1>
+                <%}%>
+        </div>
+        <div class="avg-ch c-i"></div>
+    </main>
+    <div id="section" style="display:none;">
+        <div class="c-info">
+            <div class="c-im">
+            </div>
+            <div class="c-con">
+                <h2>MORE</h2>
+                <div class="c-group">
+                    <p>UID</p>
+                    <span class="c-uid">##</span>
+                </div>
+                <div class="c-group">
+                    <p>Name</p>
+                    <span class="c-name">##</span>
+                </div>
+                <div class="c-group">
+                    <p>Charector</p>
+                    <span class="c-char">##</span>
+                </div>
+                <div class="c-group">
+                    <p>VIWE</p>
+                    <span class="c-viwe">##</span>
+                </div>
+                <div class="c-group">
+                    <p>Info</p>
+                    <!-- <span class="c-content">##</span> -->
+                    <textarea class="c-content" disabled>Considerndnwdakdhwd
+                        alskhdwhjisahw
+                        ashjdhwiahsd
+                        jawdihasdw
+                    </textarea>
+                </div>
+            </div>
+            <button onclick="popupClose()">X</button>
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+:root{
+    --disp-vw: 100vw ; 
+    --disp-vh: 100vh ;
+    --disp-sidb: 80px ;
+
+    --TR-main:calc(var(--disp-vw) - var(--disp-sidb));
+
+    --calc-head:calc(100% - var(--disp-sidb));
+    --calc-main-he:calc(var(--disp-vh) - 10%);
+
+    --indiand-custom-red:rgb(205, 92, 92);
+    --table-width-custom:calc(calc(100% - 10%) / 4);
+    --title-width-c: var(--table-width-custom) var(--table-width-custom) var(--table-width-custom) var(--table-width-custom) 10%;
+    --gird-gap-pad:2em;
+}
+body{
+    max-width: var(--disp-vw);
+    max-height: var(--disp-vh);
+    height: var(--disp-vh);
+    overflow: hidden;
+    background: linear-gradient(to right , transparent, rgb(196, 196, 196,.3)); 
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: 10% calc(calc(100% - 10%) - var(--gird-gap-pad));
+    gap: var(--gird-gap-pad);
+    padding: var(--gird-gap-pad);
+}
+header , main , aside{
+    border-radius: 20px;
+    /* background: indianred; */
+    box-shadow: rgba(100, 100, 111,.4) 0px 0px 40px;
+}
+header{
+    text-align: center;
+    display: flex;
+    align-items: center;justify-content: center;
+    h1{
+        font-size: 2vw;
+        position: relative;
+        border-radius: 10px ;
+        /* box-shadow: 0 0 10px 10px rgb(214, 213, 213,.2); */
+    } 
+}
+main{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 20% auto;
+    height: auto;
+    gap: var(--gird-gap-pad);
+    box-shadow: none;
+    & .c-i{
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: rgba(100, 100, 111,.4) 0px 0px 40px;
+    }
+    & .user-c{
+        grid-column:1 / 4;
+    }
+    & .user-i{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        grid-column:1 / 3;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        & .title{
+            position: sticky;
+            color: #fff;
+            top: 0px;
+            display: grid;
+            grid-template-columns: var(--title-width-c);
+            text-align: center;
+            background: var(--indiand-custom-red);
+            z-index: 1;
+            p{
+                padding: .5em 0 .5em 0; 
+            }
+        }
+        & table{
+            position: relative;
+            /* transform: translateY(0.8em); */
+            border: none;
+            border-collapse: collapse;
+            width: 100%;
+            height: auto;
+            /* overflow-y: scroll; */
+        }
+        tr:nth-child(odd){
+            background: rgba(230, 235, 235, 0.587)
+        }
+        td{ 
+            width: var(--table-width-custom);
+            text-align: center;
+            padding: .4em;
+        }
+        td:last-child{
+            width: 10%;
+            button{
+                padding: .3em;
+                font-weight: 400;
+                cursor: pointer;
+                background: rgb(250, 134, 134);
+                border: none;
+                color: #fff;
+            }
+        }
+    }
+    /* & .avg-ch{
+        
+    } */
+}
+aside{
+    grid-column: 1 / 1;
+    grid-row: 1 / 3;
+}
+#section{
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%; 
+    background: rgb(128, 128, 128, .5);
+    z-index: 99;
+    .c-info{
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 55%;
+        height: 80%;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111,.4) 0px 0px 40px;
+        .c-im{
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background: indianred;
+            border-radius: 0 20px 20px 0;
+        }
+        .c-con{
+            position: relative;
+            width: 50%;
+            height: 100%;
+            overflow-y:scroll;
+            display: flex;
+            padding: 1em;
+            flex-direction: column;
+            align-items: center;
+            scrollbar-width: none;
+            h2{
+                font-size: 2.2em;
+            }
+            .c-group{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                /* align-items: center; */
+                width: 90%;
+                &:first-child{
+                    margin: 4em 0 0 0;
+                }
+                &:last-child{
+                    margin: 1em 0 0 0;
+                }
+                p{
+                    margin: .3em 0 .3em 1em;
+                    font-size: 1.2em;
+                }
+                span{
+                    text-align: center;
+                    margin: 1em 0 0 0;
+                    font-size: 1.1em;
+                }
+                .c-content{
+                   
+                    background: rgb(222, 216, 216);
+                }
+                textarea{
+                    resize: none; 
+                    position: relative;
+                    margin: 1em 0 0 0;
+                    padding: .6em;
+                    height: 220px;
+                    scrollbar-width: none;
+                    font-size: 1em;
+                }
+            }
+        }
+        button{
+            position: absolute;
+            cursor: pointer;
+            padding: .2em;
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+            right: 5px;
+            top: 5px;
+        }
+    }
+}
+.sUI{ 
+    animation: sUI .2s 1 linear;
+}
+.cUI{
+    animation: cUI .2s 1 linear;
+}
+@keyframes sUI {
+    0%{ 
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes cUI {
+    0%{ 
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

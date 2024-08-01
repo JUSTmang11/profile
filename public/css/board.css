@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 100vw;
+    width: 100vw;
+    display: block;
+}
+#header{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: blue;
+}
+#main{
+    .ads{
+        position: relative;
+        width: 100%;
+        background: red;
+    }
+    .container{
+        position: relative;
+        width: 100%;
+        background: red;
+        .intro{
+            position: relative;
+            width: 100%;
+            background: red;
+        }
+    }
+}

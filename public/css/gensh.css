@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', sans-serif;
+}
+:root{
+    --bvh:100vh;
+    --hedh:100px;
+    --ops-b:solid 1px black;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+body{
+    max-width: 100vw;
+    height: auto;
+    /* overflow-y: hidden; */
+    background-image: url('../img/bg-im.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+header{
+    width: 100%;
+    height: var(--hedh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    & a{
+        position: absolute;
+        right: 0;
+        margin: 1rem 1rem 0 0;
+        background: rgb(197, 120, 255);
+        padding: 10px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    & a:hover{
+        scale: 1.06;
+    }
+}
+main{
+    max-width: 100%;
+    /* height: calc(var(--bvh) - var(--hedh)); */
+    display: flex;
+    justify-content: center;
+    /* background: red; */
+    & .container{
+        position: relative;
+        max-width: 75%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding:  0 1rem 0 1rem;
+
+        & a[class="ops"] {
+            width: 350px;
+            height: 250px;
+            border: var(--ops-b);
+            background: transparent;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .2s;
+            backdrop-filter: blur(4.8px);
+            z-index: 1;
+            & .h-img{
+                position: relative;
+                width: 100%;
+                height: 120px;
+                /* background: red; */
+                overflow: hidden;
+                border-bottom: var(--ops-b);
+                & .id-img{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('../img/bg-id-2.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position-y: -30px;
+                }
+            }
+            & .info{
+                position: relative;
+                text-align: center;
+                width: 100%;
+                color: black;
+                padding: 8px;
+                font-size: 1.2rem;
+            }
+        }
+        & a:hover{
+            scale: 1.1;
+        }
+    }
+}
+.b_img{
+    position: absolute;
+    top: -150px;
+    z-index: -1;
+    width: 100%;
+}
